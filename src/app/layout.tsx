@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/common/Navbar";
+import SpeedDial from "@/components/common/SpeedDial";
+import Footer from "@/components/common/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />{/* Render the Nabvar here */}
-        <main>{children}</main>{/* The page content will be rendered here */}
+        <main>{children}</main>
+        <SpeedDial />{/* Render the Speed Dial here */}
+        <Footer />{/* Render the Footer here */}
+        {/* The page content will be rendered here */}
       </body>
     </html>
   );

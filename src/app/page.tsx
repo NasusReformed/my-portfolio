@@ -1,9 +1,25 @@
+import Avatar from "@/components/home/Avatar";
+import AboutSection from "@/components/common/AboutSection";
+import ProjectsSection from "@/components/projects/ProjectsSection";
+import SkillsSection from "@/components/skills/SkillsSection";
+import ExperienceSection from "@/components/experience/ExperienceSection";
+import EducationSection from "@/components/education/EducationSection";
+import ContactSection from "@/components/common/ContactSection";
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* Otras secciones de la página principal */}
-      <h1>¡Bienvenido a mi Portafolio!</h1>
-      <p>Soy [Tu Nombre], Ingeniero Informático.</p>
+    <main>
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center">
+        <Avatar />
+        <h1>¡Bienvenido a mi Portafolio!</h1>
+        <p>Soy [Tu Nombre], Ingeniero Informático.</p>
+      </section>
+      <section id="about"><AboutSection /></section>
+      <section id="projects"><ProjectsSection /></section>
+      <section id="skills"><SkillsSection /></section>
+      <section id="experience"><ExperienceSection /></section>
+      <section id="education"><EducationSection /></section>
+      <section id="contact"><ContactSection /></section>
     </main>
   );
 }
