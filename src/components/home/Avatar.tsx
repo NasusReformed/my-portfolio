@@ -27,7 +27,7 @@ export default function Avatar() {
         </p>
         <div className="flex gap-4 mt-6 justify-center">
           <a
-            href="https://github.com/usuario"
+            href="https://github.com/NasusDeveloper"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -44,7 +44,7 @@ export default function Avatar() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/usuario"
+            href="https://www.linkedin.com/in/ignacio-quevedo-a71841248/?trk=public-profile-join-page"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
