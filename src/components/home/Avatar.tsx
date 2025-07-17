@@ -27,7 +27,7 @@ export default function Avatar() {
         </p>
         <div className="flex gap-4 mt-6 justify-center">
           <a
-            href="https://github.com/NasusDeveloper"
+            href="https://github.com/NasusReformed"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
