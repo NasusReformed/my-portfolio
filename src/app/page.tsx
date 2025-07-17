@@ -11,8 +11,6 @@ export default function HomePage() {
     <main>
       <section id="home" className="min-h-screen flex flex-col items-center justify-center">
         <Avatar />
-        <h1>¡Bienvenido a mi Portafolio!</h1>
-        <p>Soy [Tu Nombre], Ingeniero Informático.</p>
       </section>
       <section id="about"><AboutSection /></section>
       <section id="projects"><ProjectsSection /></section>
