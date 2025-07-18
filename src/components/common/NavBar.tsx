@@ -25,8 +25,8 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="w-full bg-white/80 dark:bg-gray-900/80 shadow-sm py-2 px-4 fixed top-0 left-0 z-50 backdrop-blur">
-      <ul className="flex justify-center items-center gap-6">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/90 dark:bg-gray-900/90 shadow-md rounded-full px-6 py-1 backdrop-blur flex justify-center items-center min-w-fit max-w-[90vw]">
+      <ul className="flex justify-center items-center gap-4">
         {navLinks.map(link => (
           <li key={link.href}>
             <a
