@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../../public/images/logo.png"; // Adjust the path to your logo image
+import Logo from "../../../public/images/logo.png";
 
 export default function Avatar() {
   return (
@@ -7,9 +7,10 @@ export default function Avatar() {
       <div style={{ position: "relative", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <span className="absolute h-[270px] w-[270px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-spin-slow blur-xl opacity-30"></span>
         <Image
-          src={Logo} // Replace with your avatar image path
-          alt="avatar"
+          src={Logo}
+          alt="Foto profesional de Ignacio Quevedo, Software Engineer"
           className="relative z-10 inline-block h-[220px] w-[220px] rounded-full border-4 border-white shadow-xl object-cover"
+          priority
         />
       </div>
       <div className="text-center mt-8 flex flex-col items-center justify-center">
@@ -30,7 +31,7 @@ export default function Avatar() {
             href="https://github.com/NasusReformed"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
+            aria-label="GitHub de Ignacio Quevedo"
             className="hover:scale-110 transition-transform"
           >
             <svg
@@ -47,7 +48,7 @@ export default function Avatar() {
             href="https://www.linkedin.com/in/ignacio-quevedo-a71841248/?trk=public-profile-join-page"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label="LinkedIn de Ignacio Quevedo"
             className="hover:scale-110 transition-transform"
           >
             <svg

@@ -4,8 +4,8 @@ import {
   Inter, 
   Geist
 } from "next/font/google";
-import SpeedDial from "@/components/common/SpeedDial";
 import Footer from "@/components/common/Footer";
+import NavBar from "@/components/common/NavBar";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,10 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.className}>
       <body className={inter.className}>
-        <main>{children}</main>
-        <SpeedDial />{/* Render the Speed Dial here */}
-        <Footer />{/* Render the Footer here */}
-        {/* The page content will be rendered here */}
+        <NavBar />
+        <main>{children}</main> {/* The main content of the HomePage */}
+        <Footer />
       </body>
     </html>
   );

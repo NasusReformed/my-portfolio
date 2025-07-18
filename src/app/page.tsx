@@ -5,11 +5,13 @@ import SkillsSection from "@/components/skills/SkillsSection";
 import ExperienceSection from "@/components/experience/ExperienceSection";
 import EducationSection from "@/components/education/EducationSection";
 import ContactSection from "@/components/common/ContactSection";
+import NavBar from "@/components/common/NavBar";
 
 export default function HomePage() {
   return (
     <main>
       <section id="home" className="min-h-screen flex flex-col items-center justify-center">
+        <NavBar />
         <Avatar />
       </section>
       <section id="about"><AboutSection /></section>
