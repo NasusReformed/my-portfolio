@@ -2,13 +2,13 @@
 import React from "react";
 
 const navLinks = [
-  { href: '#home', label: 'Inicio' },
-  { href: '#about', label: 'Sobre mí' },
-  { href: '#projects', label: 'Proyectos' },
-  { href: '#skills', label: 'Habilidades' },
-  { href: '#experience', label: 'Experiencia' },
-  { href: '#education', label: 'Formación' },
-  { href: '#contact', label: 'Contacto' },
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About me' },
+  { href: '#projects', label: 'Proyects' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 const NavBar: React.FC = () => {

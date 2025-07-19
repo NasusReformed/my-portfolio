@@ -21,7 +21,7 @@ export default function Avatar() {
           Software Engineer
         </p>
         <p className="text-gray-700 dark:text-gray-300 text-lg max-w-xl mb-4">
-          Entusiasta de la Tecnología | Full Stack Developer | UX/UI Passionate
+          Enthusiastic for the Tecnologies | Full Stack Developer | UX/UI Passionate | Constant Learning 
         </p>
         <p className="italic text-md text-gray-500 dark:text-gray-400 mt-2">
           "If you can dream it, I can create it"
