@@ -20,8 +20,8 @@ export default function Avatar() {
         <p className="text-blue-600 dark:text-blue-400 text-xl font-semibold mb-2">
           Software Engineer
         </p>
-        <p className="text-gray-700 dark:text-gray-300 text-lg max-w-xl mb-4">
-          Enthusiastic for the Tecnologies | Full Stack Developer | UX/UI Passionate | Constant Learning 
+        <p className="text-gray-700 dark:text-gray-300 text-lg max-w-flex mb-4">
+          Passionate for the Tecnologies | Full Stack Developer | Constant Learning 
         </p>
         <p className="italic text-md text-gray-500 dark:text-gray-400 mt-2">
           "If you can dream it, I can create it"
