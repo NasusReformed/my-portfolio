@@ -4,8 +4,6 @@ import { Inter, Geist } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import NavBar from '@/components/common/NavBar';
 
-import BlackHoleThree from '@/components/common/BlackHoleThree';
-
 const inter = Inter({
   subsets: ['latin'],
 });
@@ -27,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.className}>
       <body className={inter.className}>
-        <BlackHoleThree />
         <NavBar />
         <main className="relative z-10">{children}</main> {/* The main content of the HomePage */}
         <Footer />
