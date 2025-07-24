@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 const HeroSection: React.FC = () => {
   return (
     <section className="text-center py-20">
-      <h1 className="text-5xl font-bold mb-4">Hola, soy [Tu Nombre]</h1>
+      <h1 className="text-5xl font-bold mb-4">Hola, soy Ignacio Quevedo</h1>
       <p className="text-xl text-gray-700 mb-8">
         Ingeniero Informático especializado en desarrollo web.
       </p>
