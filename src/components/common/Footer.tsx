@@ -2,10 +2,11 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 p-4 text-white mt-8">
-      <div className="container mx-auto text-center">
-        <p>&copy; {new Date().getFullYear()} Ignacio Quevedo. Todos los derechos reservados.</p>
-      </div>
+    <footer className="w-full py-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white text-center font-medium tracking-wide shadow-inner mt-12">
+      <span>
+        &copy; {new Date().getFullYear()} Ignacio Quevedo &mdash; Software Engineer. All rights
+        reserved.
+      </span>
     </footer>
   );
 };

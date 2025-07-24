@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { 
-  Inter, 
-  Geist
-} from "next/font/google";
-import Footer from "@/components/common/Footer";
-import NavBar from "@/components/common/NavBar";
+import type { Metadata } from 'next';
+import './globals.css';
+import { Inter, Geist } from 'next/font/google';
+import Footer from '@/components/common/Footer';
+import NavBar from '@/components/common/NavBar';
+
+import BlackHoleThree from '@/components/common/BlackHoleThree';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,11 +12,11 @@ const inter = Inter({
 
 const geist = Geist({
   subsets: ['latin'],
-})
+});
 
 export const metadata: Metadata = {
-  title: "Portfolio of Software Engineer",
-  description: "Profesional portfolio of Ignacio Quevedo, Software Engineer",
+  title: 'Portfolio of Software Engineer',
+  description: 'Profesional portfolio of Ignacio Quevedo, Software Engineer',
 };
 
 export default function RootLayout({
@@ -28,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.className}>
       <body className={inter.className}>
+        <BlackHoleThree />
         <NavBar />
-        <main>{children}</main> {/* The main content of the HomePage */}
+        <main className="relative z-10">{children}</main> {/* The main content of the HomePage */}
         <Footer />
       </body>
     </html>

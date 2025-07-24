@@ -1,14 +1,14 @@
 'use client';
-import React from "react";
+import React from 'react';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About me' },
-  { href: '#projects', label: 'Proyects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#education', label: 'Education' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#home', label: 'Inicio' },
+  { href: '#about', label: 'Sobre mí' },
+  { href: '#projects', label: 'Proyectos' },
+  { href: '#skills', label: 'Habilidades' },
+  { href: '#experience', label: 'Experiencia' },
+  { href: '#education', label: 'Formación' },
+  { href: '#contact', label: 'Contacto' },
 ];
 
 const NavBar: React.FC = () => {
@@ -25,15 +25,15 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/90 dark:bg-gray-900/90 shadow-md rounded-full px-6 py-1 backdrop-blur flex justify-center items-center min-w-fit max-w-[90vw]">
-      <ul className="flex justify-center items-center gap-4">
-        {navLinks.map(link => (
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/70 dark:bg-gray-900/80 shadow-xl rounded-full px-8 py-2 backdrop-blur-lg flex justify-center items-center min-w-fit max-w-[90vw] border border-gray-200 dark:border-gray-800">
+      <ul className="flex justify-center items-center gap-5">
+        {navLinks.map((link) => (
           <li key={link.href}>
             <a
               href={link.href}
-              className="text-base font-medium text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors px-2 py-1 rounded"
+              className="text-base font-semibold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               aria-label={link.label}
-              onClick={e => handleScroll(e, link.href)}
+              onClick={(e) => handleScroll(e, link.href)}
             >
               {link.label}
             </a>
