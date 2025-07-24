@@ -30,8 +30,8 @@ const skillsData: { title: string; skills: readonly KnownSkill[] }[] = [
 ].sort((a, b) => a.title.localeCompare(b.title));
 
 const SkillsSection: React.FC = () => (
-  <section className="py-12 px-4">
-    <h2 className="text-3xl font-extrabold mb-8 text-center text-gray-900 dark:text-white">
+  <section className="w-full flex flex-col items-center justify-center py-20 px-4">
+    <h2 className="text-4xl text-center font-extrabold mb-6 text-white tracking-tight drop-shadow-lg uppercase letter-spacing-wider">
       Skills
       <span className="text-blue-600 dark:text-blue-400"> & Technologies</span>
     </h2>

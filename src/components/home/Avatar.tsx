@@ -1,10 +1,17 @@
-import Image from "next/image";
-import Logo from "../../../public/images/logo.png";
+import Image from 'next/image';
+import Logo from '../../../public/images/logo.png';
 
 export default function Avatar() {
   return (
     <div className="avatar flex flex-col items-center justify-center py-12">
-      <div style={{ position: "relative", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div
+        style={{
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <span className="absolute h-[270px] w-[270px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-spin-slow blur-xl opacity-30"></span>
         <Image
           src={Logo}
@@ -21,7 +28,7 @@ export default function Avatar() {
           Software Engineer
         </p>
         <p className="text-gray-700 dark:text-gray-300 text-lg max-w-flex mb-4">
-          Passionate for the Tecnologies | Full Stack Developer | Constant Learning 
+          Passionate for the Tecnologies | Full Stack Developer | Constant Learning
         </p>
         <p className="italic text-md text-gray-500 dark:text-gray-400 mt-2">
           "If you can dream it, I can create it"
