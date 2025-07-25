@@ -16,15 +16,15 @@ const skillsData: { title: string; skills: readonly KnownSkill[] }[] = [
     skills: ['Node.js', 'Python', 'Java'] as const,
   },
   {
-    title: 'Bases de Datos',
+    title: 'Database',
     skills: ['SQL', 'MongoDB', 'MySQL', 'Oracle'] as const,
   },
   {
-    title: 'Herramientas y Control de Versiones',
+    title: 'Version Control & Project Management',
     skills: ['Git', 'GitHub', 'Jira', 'AppSheet', 'Google Workspace'] as const,
   },
   {
-    title: 'Data Science & Análisis de Datos',
+    title: 'Data Science & Analytics',
     skills: ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn'] as const,
   },
 ].sort((a, b) => a.title.localeCompare(b.title));
