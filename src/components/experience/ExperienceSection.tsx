@@ -1,5 +1,6 @@
 import React from 'react';
 import ExperienceItem, { Experience } from './ExperienceItem';
+import Timeline from './Timeline';
 
 const experienceData: Experience[] = [
   {
@@ -34,9 +35,11 @@ const ExperienceSection: React.FC = () => {
         <span className="text-blue-600 dark:text-blue-400"> Experience</span>
       </h2>
       <div className="max-w-3xl w-full">
-        {experienceData.map((exp, index) => (
-          <ExperienceItem key={index} experience={exp} />
-        ))}
+        <Timeline>
+          {experienceData.map((exp, index) => (
+            <ExperienceItem key={index} experience={exp} />
+          ))}
+        </Timeline>
       </div>
     </section>
   );

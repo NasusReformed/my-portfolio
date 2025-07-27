@@ -16,9 +16,8 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
   const { role, company, period, description, technologies } = experience;
 
   return (
-    <div className="relative pl-8 sm:pl-12 py-4 group">
-      {/* Timeline visual elements */}
-      <div className="absolute left-0 top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-600 group-last:h-1/2"></div>
+    <div className="relative pl-8 sm:pl-12 py-4">
+      {/* Timeline dot */}
       <div className="absolute left-[-9px] top-4 h-5 w-5 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
 
       {/* Content */}
