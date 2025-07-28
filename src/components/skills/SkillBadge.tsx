@@ -20,8 +20,11 @@ import {
   SiPandas,
   SiPlotly,
   SiGoogle,
+  SiPostman,
+  SiBitbucket,
+  SiGitlab,
 } from 'react-icons/si';
-import { DiJava } from 'react-icons/di';
+import { DiJava} from 'react-icons/di';
 
 // Tipo unificado
 export type KnownSkill = keyof typeof skillIcons;
@@ -57,6 +60,10 @@ const skillIcons = {
   Seaborn: SiPython,
   'Google Workspace': SiGoogle,
   AppSheet: SiGoogle,
+  Postman: SiPostman,
+  Gemini: SiGoogle,
+  Bitbucket: SiBitbucket,
+  Gitlab: SiGitlab,
 } as const;
 
 const SkillBadge: React.FC<SkillBadgeProps> = ({ skill }) => {

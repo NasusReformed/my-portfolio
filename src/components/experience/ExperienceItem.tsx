@@ -1,5 +1,30 @@
 import React from 'react';
 
+export const experienceData: Experience[] = [
+  {
+    role: 'Senior Frontend Developer',
+    company: 'Tech Solutions Inc.',
+    period: 'Jan 2022 - Present',
+    description: [
+      'Led the development of a new e-commerce platform, improving performance by 30%.',
+      'Mentored junior developers and conducted code reviews to ensure code quality.',
+      'Collaborated with UX/UI designers to implement responsive and user-friendly interfaces.',
+    ],
+    technologies: ['React', 'TypeScript', 'Next.js', 'GraphQL', 'Tailwind CSS'],
+  },
+  {
+    role: 'Software Engineer',
+    company: 'Innovate Co.',
+    period: 'Jun 2019 - Dec 2021',
+    description: [
+      'Developed and maintained features for a SaaS application used by over 10,000 users.',
+      'Worked in an Agile team to deliver high-quality software on a bi-weekly sprint cycle.',
+      'Wrote unit and integration tests to maintain a high level of code coverage.',
+    ],
+    technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
+  },
+];
+
 export interface Experience {
   role: string;
   company: string;
@@ -17,10 +42,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
 
   return (
     <div className="relative pl-8 sm:pl-12 py-4">
-      {/* Timeline dot */}
       <div className="absolute left-[-9px] top-4 h-5 w-5 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
-
-      {/* Content */}
       <div className="mb-2">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white">{role}</h3>
         <p className="text-md font-semibold text-blue-600 dark:text-blue-400">{company}</p>

@@ -17,11 +17,11 @@ const skillsData: { title: string; skills: readonly KnownSkill[] }[] = [
   },
   {
     title: 'Database',
-    skills: ['SQL', 'MongoDB', 'MySQL', 'Oracle'] as const,
+    skills: ['SQL', 'MongoDB', 'MySQL', 'Oracle', 'Postman'] as const,
   },
   {
     title: 'Version Control & Project Management',
-    skills: ['Git', 'GitHub', 'Jira', 'AppSheet', 'Google Workspace'] as const,
+    skills: ['Git', 'GitHub', 'Jira', 'AppSheet', 'Google Workspace', 'Bitbucket', 'Gemini', 'Gitlab'] as const,
   },
   {
     title: 'Data Science & Analytics',

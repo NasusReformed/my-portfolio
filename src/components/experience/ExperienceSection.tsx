@@ -1,31 +1,6 @@
 import React from 'react';
-import ExperienceItem, { Experience } from './ExperienceItem';
+import ExperienceItem, { experienceData } from './ExperienceItem';
 import Timeline from './Timeline';
-
-const experienceData: Experience[] = [
-  {
-    role: 'Senior Frontend Developer',
-    company: 'Tech Solutions Inc.',
-    period: 'Jan 2022 - Present',
-    description: [
-      'Led the development of a new e-commerce platform, improving performance by 30%.',
-      'Mentored junior developers and conducted code reviews to ensure code quality.',
-      'Collaborated with UX/UI designers to implement responsive and user-friendly interfaces.',
-    ],
-    technologies: ['React', 'TypeScript', 'Next.js', 'GraphQL', 'Tailwind CSS'],
-  },
-  {
-    role: 'Software Engineer',
-    company: 'Innovate Co.',
-    period: 'Jun 2019 - Dec 2021',
-    description: [
-      'Developed and maintained features for a SaaS application used by over 10,000 users.',
-      'Worked in an Agile team to deliver high-quality software on a bi-weekly sprint cycle.',
-      'Wrote unit and integration tests to maintain a high level of code coverage.',
-    ],
-    technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
-  },
-];
 
 const ExperienceSection: React.FC = () => {
   return (
