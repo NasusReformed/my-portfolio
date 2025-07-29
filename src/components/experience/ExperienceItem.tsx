@@ -2,26 +2,26 @@ import React from 'react';
 
 export const experienceData: Experience[] = [
   {
-    role: 'Senior Frontend Developer',
-    company: 'Tech Solutions Inc.',
-    period: 'Jan 2022 - Present',
+    role: 'Software Engineer I',
+    company: 'Axmos Technologies',
+    period: 'Jul 2024 - Dec 2024',
     description: [
-      'Led the development of a new e-commerce platform, improving performance by 30%.',
-      'Mentored junior developers and conducted code reviews to ensure code quality.',
+      'Developed and maintained features for a SaaS web application',
+      'Maintained, updated, optimized and implemented new features for the web application',
       'Collaborated with UX/UI designers to implement responsive and user-friendly interfaces.',
     ],
-    technologies: ['React', 'TypeScript', 'Next.js', 'GraphQL', 'Tailwind CSS'],
+    technologies: ['React', 'TypeScript', 'Node.js', 'JavaScript', 'SCSS', 'Gemini', 'Postman', 'Jira', 'Bitbucket'],
   },
   {
-    role: 'Software Engineer',
-    company: 'Innovate Co.',
-    period: 'Jun 2019 - Dec 2021',
+    role: 'Trainee',
+    company: 'Axmos Technologies',
+    period: 'May 2024 - Jul 2024',
     description: [
-      'Developed and maintained features for a SaaS application used by over 10,000 users.',
-      'Worked in an Agile team to deliver high-quality software on a bi-weekly sprint cycle.',
-      'Wrote unit and integration tests to maintain a high level of code coverage.',
+      'Developed and maintained AppSheet Apps',
+      'Worked in an Agile team to deliver high-quality AppSheet Apps on a bi-weekly sprint cycle.',
+      'Wrote unit and integration tests to maintain a high level of AppSheet Apps coverage.',
     ],
-    technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
+    technologies: ['AppSheet', 'Google Workspace', 'JavaScript'],
   },
 ];
 
