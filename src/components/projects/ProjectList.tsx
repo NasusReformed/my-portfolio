@@ -2,8 +2,8 @@ import React from 'react';
 import { getProjects } from '@/lib/data';
 import ProjectCard from './ProjectCard';
 
-const ProjectList: React.FC = () => {
-  const projects = getProjects();
+const ProjectList: React.FC = async () => {
+  const projects = await getProjects();
 
   if (!projects || projects.length === 0) {
     return <p className="text-center text-gray-500">No projects to display at the moment.</p>;

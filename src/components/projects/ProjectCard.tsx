@@ -5,8 +5,7 @@ import Card from '../ui/Card';
 import Button from '../ui/Button';
 import { getProjects } from '@/lib/data';
 
-// Use the Project type from data.ts by inferring it from the getProjects return type
-type Project = ReturnType<typeof getProjects>[0];
+type Project = Awaited<ReturnType<typeof getProjects>>[0];
 
 interface ProjectCardProps {
   project: Project;
@@ -32,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
-            {project.technologies.slice(0, 4).map((tech) => (
+            {project.technologies.map((tech) => (
               <span key={tech} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium px-2.5 py-1 rounded-full">
                 {tech}
               </span>

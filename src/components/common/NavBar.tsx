@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '#home', label: 'Inicio' },
@@ -12,16 +14,23 @@ const navLinks = [
 ];
 
 const NavBar: React.FC = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        el.setAttribute('tabindex', '-1');
-        (el as HTMLElement).focus({ preventScroll: true });
-      }
+    if (!isHomePage) return; // Let the Link handle navigation
+    
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      el.setAttribute('tabindex', '-1');
+      (el as HTMLElement).focus({ preventScroll: true });
     }
+  };
+
+  const getHref = (href: string) => {
+    return isHomePage ? href : `/${href}`;
   };
 
   return (
@@ -29,14 +38,14 @@ const NavBar: React.FC = () => {
       <ul className="flex justify-center items-center gap-5">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <a
-              href={link.href}
+            <Link
+              href={getHref(link.href)}
               className="text-base font-semibold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
               aria-label={link.label}
               onClick={(e) => handleScroll(e, link.href)}
             >
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

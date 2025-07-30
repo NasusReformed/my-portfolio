@@ -5,23 +5,48 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { SiGithub } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
+import type { Metadata } from 'next';
 
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
-}
+type PageParams = {
+  slug: string;
+};
+
+type PageProps = {
+  params: PageParams;
+};
 
 // Generate static paths for all projects
-export async function generateStaticParams() {
-  const projects = getProjects();
+export async function generateStaticParams(): Promise<PageParams[]> {
+  const projects = await getProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
-  const project = getProjectBySlug(params.slug);
+// Generate metadata for better SEO
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  // Get the project data
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title}`,
+    description: project.description,
+  };
+}
+
+export default async function ProjectPage({ params }: PageProps) {
+  // Get the project data
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -81,6 +106,4 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ params }) => {
       </div>
     </div>
   );
-};
-
-export default ProjectPage;
+}
