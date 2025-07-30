@@ -26,7 +26,8 @@ export default function RootLayout({
     <html lang="en" className={geist.className}>
       <body className={inter.className}>
         <NavBar />
-        <main className="relative z-10">{children}</main> {/* The main content of the HomePage */}
+        {/*renderice the children of the app/page.tsx*/}
+        <main className="relative z-10">{children}</main> 
         <Footer />
       </body>
     </html>

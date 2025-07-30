@@ -26,14 +26,14 @@ import {
 } from 'react-icons/si';
 import { DiJava} from 'react-icons/di';
 
-// Tipo unificado
+// Unification of types
 export type KnownSkill = keyof typeof skillIcons;
 
 interface SkillBadgeProps {
   skill: KnownSkill;
 }
 
-// Iconos + colores oficiales (todos en gris neutro)
+// Icons + colors (all neutral gray)
 const skillIcons = {
   React: SiReact,
   'React Native': SiReact,

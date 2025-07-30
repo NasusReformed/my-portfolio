@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       },
     });
 
-        // 1. Email to the portfolio owner (you)
+    // 1. Email to the portfolio owner (you)
     const mailToOwner = {
       from: `"${name}" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
