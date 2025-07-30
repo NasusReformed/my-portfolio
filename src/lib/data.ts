@@ -19,7 +19,7 @@ export const getProjects = (): Project[] => {
       longDescription:
         'Este proyecto es un ejemplo de mis habilidades en desarrollo frontend y backend con Next.js. Incluye una sección de proyectos dinámicos y un formulario de contacto.',
       slug: 'portafolio-personal',
-      imageUrl: '/images/project-screenshot.png',
+      imageUrl: '/images/logo.png',
       technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
       githubUrl: 'https://github.com/tu-usuario/my-portfolio',
       liveUrl: 'https://tu-portafolio.com',
@@ -31,6 +31,7 @@ export const getProjects = (): Project[] => {
       longDescription:
         'Desarrollé un sistema completo para crear, editar y eliminar tareas, incluyendo autenticación de usuarios y persistencia de datos.',
       slug: 'sistema-gestion-tareas',
+      imageUrl: '/images/logo.png',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
       githubUrl: 'https://github.com/tu-usuario/task-manager',
       liveUrl: 'https://task-manager-app.com',

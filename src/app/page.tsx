@@ -1,4 +1,4 @@
-import Avatar from '@/components/home/Avatar';
+import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/common/AboutSection';
 import ProjectsSection from '@/components/projects/ProjectsSection';
 import SkillsSection from '@/components/skills/SkillsSection';
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main>
       <section id="home" className="min-h-screen flex flex-col items-center justify-center">
-        <Avatar />
+        <HeroSection />
       </section>
       <section id="about">
         <AboutSection />
