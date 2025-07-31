@@ -27,6 +27,11 @@ export const educationData: Education[] = [
     institution: 'Vercel',
     period: 'Jul 5, 2025',
   },
+  {
+    title: 'Data Analysis with Python',
+    institution: 'freeCodeCamp',
+    period: 'Jul 30, 2025',
+  },
 ];
 
 interface EducationItemProps {
