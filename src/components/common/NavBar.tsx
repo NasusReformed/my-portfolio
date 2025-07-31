@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-2 left-1/2 -translate-x-1/2 z-50 bg-white/70 dark:bg-gray-900/80 shadow-xl rounded-full px-4 py-1 backdrop-blur-lg flex justify-center items-center min-w-fit max-w-[90vw] border border-gray-200 dark:border-gray-800">
+    <nav className="fixed top-2 left-1/2 -translate-x-1/2 z-50 bg-white/70 dark:bg-gray-900/80 shadow-xl rounded-full px-6 py-1 backdrop-blur-lg flex justify-center items-center min-w-fit max-w-[90vw] border border-gray-200 dark:border-gray-800">
       <ul className="flex justify-center items-center gap-5">
         {navLinks.map((link) => (
           <li key={link.href}>

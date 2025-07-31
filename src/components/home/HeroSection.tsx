@@ -12,7 +12,6 @@ export default function HeroSection() {
           alignItems: 'center',
         }}
       >
-        <span className="absolute h-[270px] w-[270px] rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-spin-slow blur-xl opacity-30"></span>
         <Image
           src={Logo}
           alt="Foto profesional de Ignacio Quevedo, Software Engineer"
