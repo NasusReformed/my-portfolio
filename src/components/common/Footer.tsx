@@ -11,6 +11,9 @@ const Footer: React.FC = () => {
           <p className="text-sm text-gray-600 dark:text-gray-400">
             &copy; {currentYear} Ignacio Quevedo. All Rights Reserved.
           </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            nasus.informatic.engineering@gmail.com
+          </p>
         </div>
         <div className="flex space-x-6">
           <a 
