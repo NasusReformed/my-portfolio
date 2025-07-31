@@ -143,7 +143,7 @@ export const getProjects = async (): Promise<Project[]> => {
     return projects;
   } catch (error) {
     console.error('Error fetching or processing GitHub projects:', error);
-    return []; // Return an empty array on error
+    return [];
   }
 };
 
