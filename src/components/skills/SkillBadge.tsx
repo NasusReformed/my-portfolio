@@ -48,6 +48,7 @@ const getImagePath = (skillName: string): string => {
     'HTML': 'html-1.svg',
     'CSS': 'css-3.svg',
     'Tailwind': 'tailwind-css-2.svg',
+    'Terraform': 'terraform-enterprise.svg',
     'SCSS': 'sass-1.svg',
     'Sass': 'sass-1.svg',
     'React': 'react-2.svg',
@@ -65,19 +66,27 @@ const getImagePath = (skillName: string): string => {
     'PostgreSQL': 'postgresql.svg',
     'Oracle': 'oracle-corporation-logo.svg',
     'Docker': 'docker-4.svg',
-    'Kubernetes': 'kubernetes.svg',
     'AWS': 'aws-2.svg',
     'Azure': 'azure-2.svg',
+    'Git': 'git-icon.svg',
+    'GitHub': 'github-icon-1.svg',
+    'GitLab': 'gitlab.svg',
+    'Bitbucket': 'bitbucket.svg',
+    'Jira': 'jira-1.svg',
+    'Postman': 'postman.svg',
+    'NumPy': 'numpy-1.svg',
+    'Pandas': 'pandas.svg',
+    'Matplotlib': 'matplotlib-1.svg',
+    'Seaborn': 'seaborn-1.svg',
+    'Jupyter': 'jupyter.svg',
   };
 
   const iconName = imageMap[skillName] || 'default-icon.svg';
   return `/images/skills/${iconName}`;
 };
 
-/**
- * A component that displays a skill badge with an icon and optional label
- * Uses local SVG images from the public/images/skills directory
- */
+/** A component that displays a skill badge with an icon and optional label
+ * Uses local SVG images from the public/images/skills directory*/
 const SkillBadge: React.FC<SkillBadgeProps> = ({
   skill,
   size = 'md',
