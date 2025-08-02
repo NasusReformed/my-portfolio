@@ -1,46 +1,76 @@
 import React from 'react';
 import SkillCategory from './SkillCategory';
-import { KnownSkill } from './SkillBadge';
+import { SkillCategory as SkillCategoryType } from '@/data/skills';
 
-const skillsData: { title: string; skills: readonly KnownSkill[] }[] = [
-  {
-    title: 'Frontend',
-    skills: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'SCSS'] as const,
-  },
-  {
-    title: 'Frameworks',
-    skills: ['React', 'React Native', 'Next.js'] as const,
-  },
-  {
-    title: 'Backend',
-    skills: ['Node.js', 'Python', 'Java'] as const,
-  },
-  {
-    title: 'Database',
-    skills: ['SQL', 'MongoDB', 'MySQL', 'Oracle', 'Postman'] as const,
-  },
-  {
-    title: 'Version Control & Project Management',
-    skills: ['Git', 'GitHub', 'Jira', 'AppSheet', 'Google Workspace', 'Bitbucket', 'Gemini', 'Gitlab'] as const,
-  },
-  {
-    title: 'Data Science & Analytics',
-    skills: ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn'] as const,
-  },
-].sort((a, b) => a.title.localeCompare(b.title));
+interface SkillsSectionProps {
+  /**
+   * Array of skill categories to display
+   */
+  categories: SkillCategoryType[];
+  /**
+   * Optional: Size of the skill badges ('sm', 'md', or 'lg')
+   */
+  badgeSize?: 'sm' | 'md' | 'lg';
+  /**
+   * Optional: Whether to show labels under each skill badge
+   */
+  showLabels?: boolean;
+  /**
+   * Optional: Section title
+   */
+  title?: string;
+  /**
+   * Optional: Section subtitle
+   */
+  subtitle?: string;
+  /**
+   * Optional: Additional CSS classes to apply to the section
+   */
+  className?: string;
+}
 
-const SkillsSection: React.FC = () => (
-  <section className="w-full flex flex-col items-center justify-center py-20 px-4">
-    <h2 className="text-4xl text-center font-extrabold mb-6 text-white tracking-tight drop-shadow-lg uppercase letter-spacing-wider">
-      Skills
-      <span className="text-blue-600 dark:text-blue-400"> & Technologies</span>
-    </h2>
-    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-      {skillsData.map((category) => (
-        <SkillCategory key={category.title} title={category.title} skills={[...category.skills]} />
-      ))}
-    </div>
-  </section>
-);
+/**
+ * A component that renders a collection of skill categories
+ * This is a presentational component that delegates rendering to SkillCategory
+ */
+const SkillsSection: React.FC<SkillsSectionProps> = ({
+  categories,
+  badgeSize = 'md',
+  showLabels = true,
+  title = 'Skills & Technologies',
+  subtitle = 'Technologies and tools I work with on a regular basis',
+  className = '',
+}) => {
+  if (categories.length === 0) {
+    return null;
+  }
+
+  return (
+    <section id="skills" className={`py-16 md:py-20 ${className}`}>
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {title}
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {subtitle}
+          </p>
+        </div>
+        <div className="space-y-12">
+          {categories.map((category) => (
+            <div key={category.title} className="mb-8 last:mb-0">
+              <SkillCategory
+                title={category.title}
+                skills={category.skills}
+                badgeSize={badgeSize}
+                showLabels={showLabels}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default SkillsSection;

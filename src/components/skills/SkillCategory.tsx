@@ -1,20 +1,78 @@
 import React from 'react';
-import SkillBadge, { KnownSkill } from './SkillBadge';
+import SkillBadge from './SkillBadge';
+import { Skill } from '@/data/skills';
 
 interface SkillCategoryProps {
   title: string;
-  skills: KnownSkill[];
+  skills: Skill[];
+  columns?: number | 'auto';
+  className?: string;
+  badgeSize?: 'sm' | 'md' | 'lg';
+  showLabels?: boolean;
 }
 
-const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => (
-  <div className="mb-6">
-    <h3 className="text-lg font-bold mb-2 text-gray-800 dark:text-gray-200">{title}</h3>
-    <div className="flex flex-wrap gap-2">
-      {skills.map((skill) => (
-        <SkillBadge key={skill} skill={skill} />
-      ))}
+const SkillCategory: React.FC<SkillCategoryProps> = ({
+  title,
+  skills,
+  columns = 'auto',
+  className = '',
+  badgeSize = 'md',
+  showLabels = true,
+}) => {
+  // Calculate grid columns based on the number of items
+  const getGridCols = (count: number) => {
+    if (columns !== 'auto') return columns;
+    
+    // Auto-calculate columns based on number of items
+    if (count <= 3) return 2; // 2 columns for 1-3 items
+    if (count <= 6) return 3; // 3 columns for 4-6 items
+    return 4; // 4 columns for 7+ items
+  };
+
+  const gridCols = columns === 'auto' 
+    ? getGridCols(skills.length)
+    : columns;
+
+  const gridClass = {
+    1: 'grid-cols-1',
+    2: 'grid-cols-2 sm:grid-cols-2',
+    3: 'grid-cols-2 sm:grid-cols-3',
+    4: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4',
+    5: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-5',
+    6: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6',
+  }[gridCols] || 'grid-cols-2 sm:grid-cols-3';
+
+  // Calculate the maximum width based on the number of columns
+  const maxWidth = {
+    1: 'max-w-2xl',
+    2: 'max-w-4xl',
+    3: 'max-w-5xl',
+    4: 'max-w-6xl',
+    5: 'max-w-7xl',
+    6: 'max-w-7xl',
+  }[gridCols] || 'max-w-7xl';
+
+  return (
+    <div className={`w-full ${className}`}>
+      <div className={`mx-auto ${maxWidth} px-4`}>
+        <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200 ">
+          {title}
+          <div className="w-16 h-1 bg-blue-600 mt-2 rounded-full" />
+        </h3>
+        <div className={`grid ${gridClass} gap-4 sm:gap-6`}>
+          {skills.map((skill) => (
+            <div key={skill.name} className="flex justify-center">
+              <SkillBadge 
+                skill={skill} 
+                size={badgeSize}
+                showLabel={showLabels}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SkillCategory;

@@ -5,6 +5,7 @@ import SkillsSection from '@/components/skills/SkillsSection';
 import ExperienceSection from '@/components/experience/ExperienceSection';
 import EducationSection from '@/components/education/EducationSection';
 import ContactSection from '@/components/common/ContactSection';
+import skillsData from '@/data/skills';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
         <AboutSection />
       </section>
       <section id="skills">
-        <SkillsSection />
+        <SkillsSection categories={skillsData} />
       </section>
       <section id="projects">
         <ProjectsSection />
