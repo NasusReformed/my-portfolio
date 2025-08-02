@@ -31,7 +31,6 @@ export const skillsData = [
       createSkill('Java', 'https://www.java.com'),
       createSkill('HTML', 'https://www.html.com'),
       createSkill('CSS', 'https://www.css.com'),
-      createSkill('SCSS', 'https://sass-lang.com'),
       createSkill('Sass', 'https://sass-lang.com'),
     ],
   },

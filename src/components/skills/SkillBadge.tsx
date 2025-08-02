@@ -43,20 +43,19 @@ const getImagePath = (skillName: string): string => {
     'Java': 'java.svg',
     'HTML': 'html-1.svg',
     'CSS': 'css-3.svg',
-    'SCSS': 'sass-1.svg',
     'Sass': 'sass-1.svg',
     
     // Frontend
     'React': 'react-2.svg',
-    'React Native': 'react-native-1.svg',
-    'Next.js': 'next-js.svg',
+    'React Native': 'react-2.svg',
+    'Next.js': 'Next.js.svg',
     'Tailwind': 'tailwind-css-2.svg',
     
     // Backend
     'Node.js': 'nodejs-icon.svg',
     'Django': 'django.svg',
     'FastAPI': 'fastapi-1.svg',
-    
+
     // Databases
     'MongoDB': 'mongodb-icon-1.svg',
     'MySQL': 'mysql-logo-pure.svg',
@@ -67,7 +66,7 @@ const getImagePath = (skillName: string): string => {
     'Docker': 'docker-4.svg',
     'AWS': 'aws-2.svg',
     'Microsoft Azure': 'azure-2.svg',
-    'Terraform': 'terraform-enterprise.svg',
+    'Terraform': 'terraform.svg',
     
     // Version Control
     'Git': 'git-icon.svg',
@@ -87,7 +86,7 @@ const getImagePath = (skillName: string): string => {
     'Seaborn': 'seaborn-1.svg',
     
     // Productivity
-    'Google Workspace': 'logo-google-workspace.svg',
+    'Google Workspace': 'google.svg',
   };
 
   // Use type assertion to ensure TypeScript knows we're handling the undefined case
