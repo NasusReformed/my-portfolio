@@ -55,17 +55,14 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({
   return (
     <div className={`w-full ${className}`}>
       <div className={`mx-auto ${maxWidth} px-4`}>
-        <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200 ">
-          {title}
-          <div className="w-16 h-1 bg-blue-600 mt-2 rounded-full" />
-        </h3>
-        <div className={`grid ${gridClass} gap-4 sm:gap-6`}>
+        <div className={`grid ${gridClass} gap-3 sm:gap-4`}>
           {skills.map((skill) => (
             <div key={skill.name} className="flex justify-center">
               <SkillBadge 
                 skill={skill} 
                 size={badgeSize}
                 showLabel={showLabels}
+                className="m-1"
               />
             </div>
           ))}

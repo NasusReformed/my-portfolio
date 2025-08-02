@@ -1,5 +1,4 @@
 'use client';
-
 import * as React from 'react';
 import Image from 'next/image';
 import { Skill } from '@/data/skills';
@@ -22,66 +21,77 @@ interface SkillBadgeProps {
 }
 
 // Size configurations for different badge sizes
-const sizeConfig = {
-  sm: {
-    container: 'w-8 h-8',
-    text: 'text-xs',
-    icon: 24,
-  },
-  md: {
-    container: 'w-10 h-10',
-    text: 'text-sm',
-    icon: 32,
-  },
-  lg: {
-    container: 'w-12 h-12',
-    text: 'text-base',
-    icon: 40,
-  },
-} as const;
+const sizeClasses = {
+  sm: 'w-12 h-12 p-1',
+  md: 'w-16 h-16 p-1',
+  lg: 'w-20 h-20 p-1',
+};
+
+const iconSizes = {
+  sm: 32,
+  md: 40,
+  lg: 48,
+};
 
 const getImagePath = (skillName: string): string => {
   // Map skill names to their corresponding image filenames
   const imageMap: Record<string, string> = {
+    // Programming Languages
     'TypeScript': 'typescript.svg',
     'JavaScript': 'javascript-1.svg',
+    'Python': 'python-5.svg',
+    'Java': 'java.svg',
     'HTML': 'html-1.svg',
     'CSS': 'css-3.svg',
-    'Tailwind': 'tailwind-css-2.svg',
-    'Terraform': 'terraform-enterprise.svg',
     'SCSS': 'sass-1.svg',
     'Sass': 'sass-1.svg',
+    
+    // Frontend
     'React': 'react-2.svg',
     'React Native': 'react-native-1.svg',
     'Next.js': 'next-js.svg',
+    'Tailwind': 'tailwind-css-2.svg',
+    
+    // Backend
     'Node.js': 'nodejs-icon.svg',
-    'Python': 'python-5.svg',
-    'Java': 'java.svg',
     'Django': 'django.svg',
-    'Flask': 'flask.svg',
     'FastAPI': 'fastapi-1.svg',
-    'SQL': 'mysql-logo-pure.svg',
+    
+    // Databases
     'MongoDB': 'mongodb-icon-1.svg',
     'MySQL': 'mysql-logo-pure.svg',
     'PostgreSQL': 'postgresql.svg',
     'Oracle': 'oracle-corporation-logo.svg',
+    
+    // DevOps & Cloud
     'Docker': 'docker-4.svg',
     'AWS': 'aws-2.svg',
-    'Azure': 'azure-2.svg',
+    'Microsoft Azure': 'azure-2.svg',
+    'Terraform': 'terraform-enterprise.svg',
+    
+    // Version Control
     'Git': 'git-icon.svg',
     'GitHub': 'github-icon-1.svg',
     'GitLab': 'gitlab.svg',
-    'Bitbucket': 'bitbucket.svg',
+    'Bitbucket': 'bitbucket-icon.svg',
+    
+    // Tools & IDEs
     'Jira': 'jira-1.svg',
     'Postman': 'postman.svg',
+    'Jupyter': 'jupyter.svg',
+    
+    // Data Science
     'NumPy': 'numpy-1.svg',
     'Pandas': 'pandas.svg',
     'Matplotlib': 'matplotlib-1.svg',
     'Seaborn': 'seaborn-1.svg',
-    'Jupyter': 'jupyter.svg',
+    
+    // Productivity
+    'Google Workspace': 'logo-google-workspace.svg',
   };
 
-  const iconName = imageMap[skillName] || 'default-icon.svg';
+  // Use type assertion to ensure TypeScript knows we're handling the undefined case
+  const iconName = skillName in imageMap ? imageMap[skillName] : 'default-icon.svg';
   return `/images/skills/${iconName}`;
 };
 
@@ -107,7 +117,6 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
 
   // Get the icon path for the skill
   const iconPath = getImagePath(skill.name);
-  const config = sizeConfig[size];
 
   // Handle click events
   const handleClick = (e: React.MouseEvent) => {
@@ -142,7 +151,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
 
   return (
     <div 
-      className={`group flex flex-col items-center ${className}`}
+      className="flex flex-col items-center group"
       onMouseEnter={() => interactive && setIsHovered(true)}
       onMouseLeave={() => interactive && setIsHovered(false)}
       onClick={handleClick}
@@ -152,32 +161,25 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
       aria-label={interactive ? `Learn more about ${skill.name}` : skill.name}
       style={{
         cursor: interactive ? 'pointer' : 'default',
-        transition: 'transform 0.2s ease, opacity 0.2s ease',
+        transition: 'transform 0.2s ease',
         transform: isHovered && interactive ? 'translateY(-2px)' : 'none',
-        opacity: isHovered && interactive ? 0.9 : 1,
       }}
     >
-      <div 
-        className={`relative flex items-center justify-center ${config.container} rounded-lg bg-white dark:bg-gray-800 p-2 shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-200 group-hover:shadow-md`}
-        style={{
-          ...iconStyle,
-          transform: isHovered && interactive ? 'scale(1.1)' : 'scale(1)',
-        }}
-      >
+      <div className={`${sizeClasses[size]} ${className}`}>
         <div className="relative w-full h-full flex items-center justify-center">
           {!iconError ? (
             <Image
               src={iconPath}
               alt={skill.name}
-              width={config.icon}
-              height={config.icon}
-              className="object-contain w-full h-full"
+              width={iconSizes[size]}
+              height={iconSizes[size]}
+              className="object-contain w-full h-full filter grayscale hover:grayscale-0 transition-all duration-300"
               onError={() => setIconError(true)}
-              title={skill.name}
               loading="lazy"
+              title={skill.name}
             />
           ) : (
-            <span className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">
+            <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
               {skill.name.charAt(0).toUpperCase()}
             </span>
           )}
@@ -186,7 +188,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
       
       {showLabel && (
         <span 
-          className={`${config.text} font-medium text-center text-gray-700 dark:text-gray-300 transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 mt-2`}
+          className={`text-sm font-medium text-center text-gray-700 dark:text-gray-300 transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 mt-1`}
           style={{
             maxWidth: '100%',
             overflow: 'hidden',

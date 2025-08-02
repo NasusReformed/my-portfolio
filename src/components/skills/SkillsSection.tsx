@@ -45,6 +45,11 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
     return null;
   }
 
+  // Flatten all skills from all categories into a single array
+  const allSkills = React.useMemo(() => {
+    return categories.flatMap(category => category.skills);
+  }, [categories]);
+
   return (
     <section id="skills" className={`py-16 md:py-20 ${className}`}>
       <div className="container mx-auto px-4">
@@ -56,18 +61,13 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
             {subtitle}
           </p>
         </div>
-        <div className="space-y-12">
-          {categories.map((category) => (
-            <div key={category.title} className="mb-8 last:mb-0">
-              <SkillCategory
-                title={category.title}
-                skills={category.skills}
-                badgeSize={badgeSize}
-                showLabels={showLabels}
-              />
-            </div>
-          ))}
-        </div>
+        <SkillCategory
+          title=""
+          skills={allSkills}
+          badgeSize={badgeSize}
+          showLabels={showLabels}
+          columns={6}
+        />
       </div>
     </section>
   );
