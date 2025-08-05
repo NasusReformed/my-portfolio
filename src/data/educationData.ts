@@ -14,7 +14,7 @@ export const educationData: Education[] = [
     title: 'Ingeniería en Informática',
     institution: 'INACAP Apoquindo',
     period: '2020 - 2024',
-    imagePath: `${CERTIFICATES_PATH}/degree-placeholder.png`,
+    imagePath: `${CERTIFICATES_PATH}/nextjs.avif`,
     certificateUrl: 'https://www.inacap.cl/tportalvp/educacion-superior/area-informatica-y-tecnologia/ingenieria-en-informatica/santiago/executive'
   },
   {

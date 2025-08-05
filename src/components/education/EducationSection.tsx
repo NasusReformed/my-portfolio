@@ -19,7 +19,7 @@ const EducationSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {educationData.map((edu: Education, index: number) => (
             <div key={index} className="h-full">
-              <EducationItem education={edu} />
+              <EducationItem education={edu} index={index} />
             </div>
           ))}
         </div>
