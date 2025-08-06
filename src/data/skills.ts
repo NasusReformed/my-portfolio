@@ -89,6 +89,7 @@ export const skillsData = [
       createSkill('Jira', 'https://www.atlassian.com/software/jira'),
       createSkill('Postman', 'https://www.postman.com'),
       createSkill('Google Workspace', 'https://workspace.google.com'),
+      createSkill('AI', 'https://www.google.com/ai'),
     ],
   },
 ];

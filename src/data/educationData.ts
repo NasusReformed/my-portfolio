@@ -44,5 +44,12 @@ export const educationData: Education[] = [
     period: 'Jul 30, 2025',
     imagePath: `${CERTIFICATES_PATH}/Data Analysis with python.png`,
     certificateUrl: 'https://www.freecodecamp.org/certification/nasusreformed/data-analysis-with-python-v7'
+  },
+  {
+    title: 'Oracle Cloud Infraestructure 2025 Certified AI Foundations Associate',
+    institution: 'Oracle',
+    period: 'Aug 5, 2025',
+    imagePath: `${CERTIFICATES_PATH}/OCI25AICFA.png`,
+    certificateUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=7AAA797102911C74D91436A35C6660669C2F95B3FC78BE1154931492F09F61E9'
   }
 ];

@@ -78,6 +78,7 @@ const getImagePath = (skillName: string): string => {
     'Jira': 'jira-1.svg',
     'Postman': 'postman.svg',
     'Jupyter': 'jupyter.svg',
+    'AI': 'AI logo.svg',
     
     // Data Science
     'NumPy': 'numpy-1.svg',
