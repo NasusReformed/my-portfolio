@@ -3,10 +3,10 @@ export interface Education {
   institution: string;
   period: string;
   imagePath: string;
-  certificateUrl: string; // URL del certificado online
+  certificateUrl: string;
 }
 
-// Rutas a las imágenes locales de los certificados
+// Routes to the local images of the certificates
 const CERTIFICATES_PATH = '/images/certifications';
 
 export const educationData: Education[] = [

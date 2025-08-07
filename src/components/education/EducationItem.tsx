@@ -26,98 +26,88 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
     setImageError(false);
   }, [imagePath]);
 
-  const renderMedia = () => {
+  const renderCertificate = () => {
     if (isPdf) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
-          <div className="text-center p-4">
-            <div className="text-4xl mb-2">📄</div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Ver PDF</p>
+        <div className="w-full h-48 flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-4xl mb-1">📄</div>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Open PDF</p>
           </div>
         </div>
       );
     }
 
-    // Check if the image exists before trying to render it
     if (imageError || !imagePath) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
-          <div className="text-center p-4">
-            <div className="text-4xl mb-2">🎓</div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{institution.charAt(0)}</p>
+        <div className="w-full h-48 flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-4xl mb-1">🎓</div>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{institution.charAt(0)}</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-48">
         <Image
           src={imagePath}
           alt={`${title} certificate`}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-contain transition-transform duration-300 hover:scale-105"
+          className="object-contain"
+          style={{ objectPosition: 'center' }}
           onError={() => setImageError(true)}
           onLoad={() => setImageError(false)}
           unoptimized={process.env.NODE_ENV !== 'production'}
-          priority={index < 2} // Preload first 2 images for better LCP
+          priority={index < 2}
         />
+        <div className="absolute inset-0 bg-white/0 hover:bg-white/80 dark:bg-gray-900/0 dark:hover:bg-gray-900/80 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-200 px-3 py-1 rounded bg-white/90 dark:bg-gray-800/90 shadow-sm border border-gray-200 dark:border-gray-700">
+            View Certificate
+          </span>
+        </div>
       </div>
     );
   };
 
   const content = (
-    <>
+    <div className="flex flex-col items-center w-full h-full">
       {/* Certificate/Degree Media */}
-      <div className="h-48 overflow-hidden rounded-lg mb-4 bg-transparent group">
-        <div className="relative w-full h-full">
-          {renderMedia()}
-          {!imageError && imagePath && (
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <span className="bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded-full">
-                {isPdf ? 'Abrir PDF' : 'Ver certificado'}
-              </span>
-            </div>
-          )}
-        </div>
+      <div className="w-full h-48 mb-2 overflow-hidden">
+        {renderCertificate()}
       </div>
 
       {/* Content */}
-      <div className="flex-1 flex flex-col">
-        <div className="mb-2">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2" title={title}>
-            {title}
-          </h3>
-        </div>
-        
-        <p className="text-md font-semibold text-blue-600 dark:text-blue-400 mb-2">
-          {institution}
+      <div className="w-full text-center px-1">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 mb-0.5 leading-tight" title={title}>
+          {title}
+        </h3>
+        <p className="text-xs text-gray-700 dark:text-gray-300 leading-tight">
+          {institution} • {period}
         </p>
-        
-        <div className="mt-auto pt-3">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {period}
-          </p>
-        </div>
       </div>
-    </>
+    </div>
   );
 
   if (certificateUrl) {
     return (
-      <a 
-        href={certificateUrl} 
-        target="_blank" 
+      <a
+        href={certificateUrl}
+        target="_blank"
         rel="noopener noreferrer"
-        className="block h-full group"
+        className="block h-full hover:bg-gray-50 dark:hover:bg-gray-800/30 rounded transition-colors p-1"
       >
         {content}
       </a>
     );
   }
 
-  return <div className="h-full">{content}</div>;
+  return (
+    <div className="h-full p-1">
+      {content}
+    </div>
+  );
 };
 
 export default EducationItem;

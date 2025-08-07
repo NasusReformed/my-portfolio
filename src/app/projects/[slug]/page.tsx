@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { SiGithub } from 'react-icons/si';
-import { FiExternalLink } from 'react-icons/fi';
 import type { Metadata } from 'next';
 
 type PageParams = {
@@ -59,7 +58,7 @@ export default async function ProjectPage({ params }: PageProps) {
       </h1>
 
       {project.imageUrl && (
-        <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-xl">
+        <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
           <Image
             src={project.imageUrl}
             alt={`Screenshot of ${project.title}`}
@@ -91,14 +90,6 @@ export default async function ProjectPage({ params }: PageProps) {
                 <Button variant="outline">
                   <SiGithub className="mr-2" />
                   View on GitHub
-                </Button>
-            </Link>
-          )}
-          {project.liveUrl && (
-            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="primary">
-                  <FiExternalLink className="mr-2" />
-                  Live Demo
                 </Button>
             </Link>
           )}
