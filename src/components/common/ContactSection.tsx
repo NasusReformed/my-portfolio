@@ -37,17 +37,11 @@ const ContactSection: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                    <SiGmail size={24} />
-                  </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200">Email</h4>
-                    <a 
-                      href="mailto:nasus.informatic.engineering@gmail.com" 
-                      className="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200"
-                    >
+                    <p className="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200">
                       nasus.informatic.engineering@gmail.com
-                    </a>
+                    </p>
                   </div>
                 </div>
                 
