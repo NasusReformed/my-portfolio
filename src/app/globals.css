@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+
+
+@layer base {
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    background-color: #000000; /* Fallback */
+    background-image: linear-gradient(to bottom, #6B21A8, #000000);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
