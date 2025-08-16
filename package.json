@@ -12,9 +12,6 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@react-three/drei": "^10.5.1",
-    "@react-three/fiber": "^9.2.0",
-    "@react-three/postprocessing": "^3.0.4",
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
@@ -26,7 +23,6 @@
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-tsparticles": "^2.12.2",
-    "three": "^0.178.0",
     "tsparticles-engine": "^2.12.0",
     "tsparticles-slim": "^2.12.0"
   },
