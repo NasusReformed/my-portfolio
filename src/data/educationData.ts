@@ -51,5 +51,12 @@ export const educationData: Education[] = [
     period: 'Aug 5, 2025',
     imagePath: `${CERTIFICATES_PATH}/OCI25AICFA.png`,
     certificateUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=7AAA797102911C74D91436A35C6660669C2F95B3FC78BE1154931492F09F61E9'
+  },
+  {
+    title: 'Oracle Cloud Infraestructure 2025 Certified AI Professional',
+    institution: 'Oracle',
+    period: 'Aug 5, 2025',
+    imagePath: `${CERTIFICATES_PATH}/OCI25AICFA.png`,
+    certificateUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=7AAA797102911C74D91436A35C6660669C2F95B3FC78BE1154931492F09F61E9'
   }
 ];
