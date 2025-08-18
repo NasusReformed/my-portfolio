@@ -77,6 +77,7 @@ export const skillsData = [
       createSkill('Matplotlib', 'https://matplotlib.org'),
       createSkill('Seaborn', 'https://seaborn.pydata.org'),
       createSkill('Jupyter', 'https://jupyter.org'),
+      createSkill('Anaconda', 'https://www.anaconda.com'),
     ],
   },
   {

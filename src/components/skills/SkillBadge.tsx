@@ -22,9 +22,9 @@ interface SkillBadgeProps {
 
 // Size configurations for different badge sizes
 const sizeClasses = {
-  sm: 'w-12 h-12 p-1',
-  md: 'w-16 h-16 p-1',
-  lg: 'w-20 h-20 p-1',
+  sm: 'w-10 h-10 p-0.5',
+  md: 'w-14 h-14 p-0.5',
+  lg: 'w-18 h-18 p-0.5',
 };
 
 const iconSizes = {
@@ -85,6 +85,7 @@ const getImagePath = (skillName: string): string => {
     'Pandas': 'pandas.svg',
     'Matplotlib': 'matplotlib-1.svg',
     'Seaborn': 'seaborn-1.svg',
+    'Anaconda': 'Anaconda.svg',
     
     // Productivity
     'Google Workspace': 'google.svg',
