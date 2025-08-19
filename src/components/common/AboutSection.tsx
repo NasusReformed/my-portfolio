@@ -38,17 +38,17 @@ const AboutSection: React.FC = () => {
               </p>
 
               <p>
-                I am a <span className="font-semibold">Software Engineer</span> with a love for technology
-                and continuous learning. I specialize in{' '}
-                <span className="font-semibold">Software Engineering</span>, creating innovative
-                solutions that enhance user experiences and drive business success.
+                I'm a <span className="font-semibold">Software Engineer</span> with a love for technology
+                and continuous learning. I'm specialize in{' '}
+                <span className="font-semibold">Data Analyst, Scientific Computing, Machine Learning, Deep Learning, AI and Cloud and Python</span>, creating
+                innovative solutions that enhance user experiences and drive business success.
               </p>
 
               <p>
-                At the moment, I study new technologies related to{' '}
+                At the moment, I continue to improve my skills in{' '}
                 <span className="font-semibold">Python</span>,{' '}
                 <span className="font-semibold">Data Analyst</span>,{' '}
-                <span className="font-semibold">Computer Science</span>, {' '}
+                <span className="font-semibold">Scientific Computing</span>, {' '}
                 <span className="font-semibold">Machine Learning</span>, {' '}
                 <span className="font-semibold">Deep Learning</span>, {' '}
                 <span className="font-semibold">Multicloud</span>, {' '}
