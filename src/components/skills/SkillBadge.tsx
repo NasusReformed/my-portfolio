@@ -150,6 +150,10 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
     return null;
   }
 
+  const highlightClass = skill.highlighted
+    ? 'rounded-full shadow-lg shadow-purple-400/50 ring-1 ring-purple-500/50 transition-all duration-300 scale-105'
+    : '';
+
   return (
     <div 
       className="flex flex-col items-center group"
@@ -166,7 +170,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
         transform: isHovered && interactive ? 'translateY(-2px)' : 'none',
       }}
     >
-      <div className={`${sizeClasses[size]} ${className}`}>
+      <div className={`${sizeClasses[size]} ${className} ${highlightClass}`}>
         <div className="relative w-full h-full flex items-center justify-center">
           {!iconError ? (
             <Image

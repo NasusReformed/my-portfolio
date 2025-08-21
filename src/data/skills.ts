@@ -7,6 +7,8 @@ export interface Skill {
   url?: string;
   // Optional: Category for filtering (if different from the parent category)
   category?: string;
+  // Optional: Whether to highlight the skill
+  highlighted?: boolean;
 }
 
 export interface SkillCategory {
@@ -15,9 +17,10 @@ export interface SkillCategory {
 }
 
 // Helper function to create skill objects with proper URLs
-const createSkill = (name: string, url?: string): Skill => ({
+const createSkill = (name: string, url?: string, highlighted: boolean = false): Skill => ({
   name,
   url: url || `https://www.google.com/search?q=${encodeURIComponent(name)}+technology`,
+  highlighted,
 });
 
 // Skill categories with their respective skills
@@ -27,7 +30,7 @@ export const skillsData = [
     skills: [
       createSkill('TypeScript', 'https://www.typescriptlang.org'),
       createSkill('JavaScript', 'https://www.javascript.com'),
-      createSkill('Python', 'https://www.python.org'),
+      createSkill('Python', 'https://www.python.org', true),
       createSkill('Java', 'https://www.java.com'),
       createSkill('HTML', 'https://www.html.com'),
       createSkill('CSS', 'https://www.css.com'),
@@ -47,8 +50,8 @@ export const skillsData = [
     title: 'Backend Development',
     skills: [
       createSkill('Node.js', 'https://nodejs.org'),
-      createSkill('Django', 'https://www.djangoproject.com'),
-      createSkill('FastAPI', 'https://fastapi.tiangolo.com'),
+      createSkill('Django', 'https://www.djangoproject.com', true),
+      createSkill('FastAPI', 'https://fastapi.tiangolo.com', true),
     ],
   },
   {
@@ -72,12 +75,12 @@ export const skillsData = [
   {
     title: 'Data Science & Analytics',
     skills: [
-      createSkill('NumPy', 'https://numpy.org'),
-      createSkill('Pandas', 'https://pandas.pydata.org'),
-      createSkill('Matplotlib', 'https://matplotlib.org'),
-      createSkill('Seaborn', 'https://seaborn.pydata.org'),
-      createSkill('Jupyter', 'https://jupyter.org'),
-      createSkill('Anaconda', 'https://www.anaconda.com'),
+      createSkill('NumPy', 'https://numpy.org', true),
+      createSkill('Pandas', 'https://pandas.pydata.org', true),
+      createSkill('Matplotlib', 'https://matplotlib.org', true),
+      createSkill('Seaborn', 'https://seaborn.pydata.org', true),
+      createSkill('Jupyter', 'https://jupyter.org', true),
+      createSkill('Anaconda', 'https://www.anaconda.com', true),
     ],
   },
   {
@@ -90,7 +93,7 @@ export const skillsData = [
       createSkill('Jira', 'https://www.atlassian.com/software/jira'),
       createSkill('Postman', 'https://www.postman.com'),
       createSkill('Google Workspace', 'https://workspace.google.com'),
-      createSkill('AI', 'https://www.google.com/ai'),
+      createSkill('AI', 'https://www.google.com/ai', true),
     ],
   },
 ];
