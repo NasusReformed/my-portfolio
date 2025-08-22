@@ -60,7 +60,7 @@ const getImagePath = (skillName: string): string => {
     'MongoDB': 'mongodb-icon-1.svg',
     'MySQL': 'mysql-logo-pure.svg',
     'PostgreSQL': 'postgresql.svg',
-    'Oracle': 'oracle-corporation-logo.svg',
+    'OCI': 'oracle-corporation-logo.svg',
     
     // DevOps & Cloud
     'Docker': 'docker-4.svg',

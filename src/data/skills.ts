@@ -60,7 +60,7 @@ export const skillsData = [
       createSkill('MongoDB', 'https://www.mongodb.com'),
       createSkill('MySQL', 'https://www.mysql.com'),
       createSkill('PostgreSQL', 'https://www.postgresql.org'),
-      createSkill('Oracle', 'https://www.oracle.com'),
+      createSkill('OCI', 'https://www.oracle.com', true),
     ],
   },
   {
