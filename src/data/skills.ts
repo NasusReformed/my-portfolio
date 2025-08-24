@@ -87,7 +87,7 @@ export const skillsData = [
     title: 'Tools & Platforms',
     skills: [
       createSkill('Git', 'https://git-scm.com'),
-      createSkill('GitHub', 'https://github.com'),
+      createSkill('GitHub', 'https://github.com', true),
       createSkill('GitLab', 'https://gitlab.com'),
       createSkill('Bitbucket', 'https://bitbucket.org'),
       createSkill('Jira', 'https://www.atlassian.com/software/jira'),
