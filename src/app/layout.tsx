@@ -28,7 +28,6 @@ export default function RootLayout({
     <html lang="en" className={geist.className}>
       <body className={`${inter.className} bg-gray-900 text-white`}>
         <AnimatedBackground />
-
         <NavBar />
         <main className="relative z-10">{children}</main> 
         <Footer />
