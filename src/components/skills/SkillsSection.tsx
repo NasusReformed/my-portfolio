@@ -3,36 +3,14 @@ import SkillCategory from './SkillCategory';
 import { SkillCategory as SkillCategoryType } from '@/data/skills';
 
 interface SkillsSectionProps {
-  /**
-   * Array of skill categories to display
-   */
   categories: SkillCategoryType[];
-  /**
-   * Optional: Size of the skill badges ('sm', 'md', or 'lg')
-   */
   badgeSize?: 'sm' | 'md' | 'lg';
-  /**
-   * Optional: Whether to show labels under each skill badge
-   */
   showLabels?: boolean;
-  /**
-   * Optional: Section title
-   */
   title?: string;
-  /**
-   * Optional: Section subtitle
-   */
   subtitle?: string;
-  /**
-   * Optional: Additional CSS classes to apply to the section
-   */
   className?: string;
 }
 
-/**
- * A component that renders a collection of skill categories
- * This is a presentational component that delegates rendering to SkillCategory
- */
 const SkillsSection: React.FC<SkillsSectionProps> = ({
   categories,
   badgeSize = 'md',

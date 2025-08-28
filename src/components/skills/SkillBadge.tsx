@@ -4,19 +4,12 @@ import Image from 'next/image';
 import { Skill } from '@/data/skills';
 
 interface SkillBadgeProps {
-  /** The skill data to display */
   skill: Skill;
-  /** Size of the badge */
   size?: 'sm' | 'md' | 'lg';
-  /** Whether to show the label under the icon */
   showLabel?: boolean;
-  /** Additional CSS classes */
   className?: string;
-  /** Optional click handler */
   onClick?: () => void;
-  /** Whether the badge is interactive */
   interactive?: boolean;
-  /** Additional styles for the icon container */
   iconStyle?: React.CSSProperties;
 }
 
