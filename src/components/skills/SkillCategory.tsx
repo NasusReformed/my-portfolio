@@ -24,9 +24,9 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({
     if (columns !== 'auto') return columns;
     
     // Auto-calculate columns based on number of items
-    if (count <= 3) return 2; // 2 columns for 1-3 items
-    if (count <= 6) return 3; // 3 columns for 4-6 items
-    return 4; // 4 columns for 7+ items
+    if (count <= 3) return 2; 
+    if (count <= 6) return 3; 
+    return 4;
   };
 
   const gridCols = columns === 'auto' 
