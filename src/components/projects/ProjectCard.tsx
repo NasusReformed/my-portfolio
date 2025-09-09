@@ -14,19 +14,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="group relative p-5 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow transition-all duration-200 border border-gray-100 dark:border-gray-700 hover:border-blue-100 dark:hover:border-blue-900/30 text-center">
       <div className="flex flex-col items-center">
-        {/* Project Title */}
-        <Link href={`/projects/${project.slug}`}>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
             {project.title}
           </h3>
-        </Link>
         
-        {/* Project Description */}
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-snug max-w-lg">
           {project.description}
         </p>
         
-        {/* Technologies */}
         <div className="flex flex-wrap justify-center gap-1.5 max-w-lg">
           {project.technologies.map((tech) => (
             <span 
