@@ -1,21 +1,37 @@
-import React from 'react';
-import { getProjects } from '@/lib/data';
+'use client';
+
+import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
+import ProjectModal from './ProjectModal';
+import { Project } from '@/lib/data';
 
-const ProjectList: React.FC = async () => {
-  const projects = await getProjects();
+interface ProjectListClientProps {
+  projects: Project[];
+}
 
-  if (!projects || projects.length === 0) {
-    return <p className="text-center text-gray-500">No projects to display at the moment.</p>;
-  }
+const ProjectListClient: React.FC<ProjectListClientProps> = ({ projects }) => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            onClick={() => setSelectedProject(project)}
+          />
+        ))}
+      </div>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
+    </>
   );
 };
 
-export default ProjectList;
+export default ProjectListClient;
