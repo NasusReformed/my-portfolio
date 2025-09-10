@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import ProjectCard from './ProjectCard';
-import ProjectModal from './ProjectModal';
+import ProjectCard from '@/components/projects/ProjectCard';
+import ProjectModal from '@/components/projects/ProjectModal';
 import { Project } from '@/lib/data';
 
 interface ProjectListClientProps {
