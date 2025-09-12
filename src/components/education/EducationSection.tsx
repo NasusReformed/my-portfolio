@@ -4,24 +4,26 @@ import { Education, educationData } from '@/data/educationData';
 
 const EducationSection: React.FC = () => {
   return (
-    <section className="w-full py-12 px-2 sm:px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight drop-shadow-lg uppercase">
-            Education
-            <span className="text-blue-600 dark:text-blue-400"> & Training</span>
+    <section id="education" className="py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            Education & Training
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
             My academic background and professional certifications that have shaped my technical expertise.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 px-2">
-          {educationData.map((edu: Education, index: number) => (
-            <div key={index} className="h-full">
-              <EducationItem education={edu} index={index} />
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {educationData.map((edu: Education, index: number) => (
+              <div key={index} className="h-full">
+                <EducationItem education={edu} index={index} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
