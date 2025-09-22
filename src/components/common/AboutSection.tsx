@@ -7,7 +7,6 @@ const AboutSection: React.FC = () => {
     <section className="w-full py-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
-          {/* Left Column - Photo */}
           <div className="md:w-1/4 lg:w-1/5 flex-shrink-0 mx-auto md:mx-0">
             <div className="relative">
               <Image
@@ -21,7 +20,6 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Content */}
           <div className="flex-1">
             <h2 className="text-4xl font-extrabold mb-6 text-white tracking-tight drop-shadow-lg uppercase letter-spacing-wider">
               About Me
