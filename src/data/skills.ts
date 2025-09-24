@@ -1,6 +1,3 @@
-// This file contains the skills data for the portfolio
-// Icons are loaded from /public/images/skills/ directory
-
 export interface Skill {
   name: string;
   // Official website URL (optional)
