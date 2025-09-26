@@ -1,10 +1,7 @@
 export interface Skill {
   name: string;
-  // Official website URL (optional)
   url?: string;
-  // Optional: Category for filtering (if different from the parent category)
   category?: string;
-  // Optional: Whether to highlight the skill
   highlighted?: boolean;
 }
 
