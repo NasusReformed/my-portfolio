@@ -8,7 +8,6 @@ export interface Education {
   institution: string;
   period: string;
   imagePath: string;
-  certificateUrl: string;
 }
 
 interface EducationItemProps {
@@ -17,7 +16,8 @@ interface EducationItemProps {
 }
 
 const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) => {
-  const { title, institution, period, imagePath, certificateUrl } = education;
+  const { title, institution, period, imagePath } = education;
+  const [showModal, setShowModal] = useState(false);
   const [imageError, setImageError] = useState(false);
   const isPdf = imagePath.toLowerCase().endsWith('.pdf');
 
@@ -90,23 +90,44 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
     </div>
   );
 
-  if (certificateUrl) {
-    return (
-      <a
-        href={certificateUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full h-full hover:bg-gray-50 dark:hover:bg-gray-800/30 rounded-full transition-colors p-2"
+  return (
+    <>
+      <div
+        className="w-full h-full rounded-full p-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+        onClick={() => setShowModal(true)}
+        tabIndex={0}
+        role="button"
+        aria-label={`Ver certificado de ${title}`}
       >
         {content}
-      </a>
-    );
-  }
-
-  return (
-    <div className="w-full h-full rounded-full p-2">
-      {content}
-    </div>
+      </div>
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowModal(false)}>
+          <div className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg max-w-xl w-full flex flex-col items-center relative" onClick={e => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl"
+              onClick={() => setShowModal(false)}
+              aria-label="Cerrar"
+            >
+              &times;
+            </button>
+            <Image
+              src={imagePath}
+              alt={`Certificado de ${title}`}
+              width={600}
+              height={400}
+              className="rounded-lg object-contain max-h-[60vh] w-auto h-auto"
+              unoptimized={process.env.NODE_ENV !== 'production'}
+            />
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{institution}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{period}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
