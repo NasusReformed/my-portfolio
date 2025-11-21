@@ -45,4 +45,16 @@ export const educationData: Education[] = [
     period: 'Aug 5, 2025',
     imagePath: `${CERTIFICATES_PATH}/OCI25AICFA.png`,
   },
+  {
+    title: 'Building No-Code Apps with AppSheet: Foundations',
+    institution: 'Google',
+    period: 'Nov 20, 2025',
+    imagePath: `${CERTIFICATES_PATH}/AppSheet.png`,
+  },
+  {
+    title: 'Cloud Engineer',
+    institution: 'Certification',
+    period: 'soon..',
+    imagePath: `${CERTIFICATES_PATH}/Soon.jpg`,
+  },
 ];

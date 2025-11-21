@@ -90,10 +90,20 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
     </div>
   );
 
+  // Close with escape
+  useEffect(() => {
+    if (!showModal) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowModal(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showModal]);
+
   return (
     <>
       <div
-        className="w-full h-full rounded-full p-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors"
+        className="w-full h-full rounded-full p-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors focus:outline-none focus:ring-0"
         onClick={() => setShowModal(true)}
         tabIndex={0}
         role="button"
