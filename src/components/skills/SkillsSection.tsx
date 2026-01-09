@@ -19,14 +19,14 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
   subtitle = 'Technologies and tools I work with on a regular basis',
   className = '',
 }) => {
+  // Flatten all skills from all categories into a single array
+  const allSkills = React.useMemo(() => {
+    return categories.flatMap((category) => category.skills);
+  }, [categories]);
+
   if (categories.length === 0) {
     return null;
   }
-
-  // Flatten all skills from all categories into a single array
-  const allSkills = React.useMemo(() => {
-    return categories.flatMap(category => category.skills);
-  }, [categories]);
 
   return (
     <section id="skills" className={`py-16 md:py-20 ${className}`}>

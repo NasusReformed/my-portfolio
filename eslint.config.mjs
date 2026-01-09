@@ -1,6 +1,9 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -31,7 +34,7 @@ const eslintConfig = [
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
-      parser: "@typescript-eslint/parser",
+      parser: require("@typescript-eslint/parser"),
     },
     plugins: {
       "@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
