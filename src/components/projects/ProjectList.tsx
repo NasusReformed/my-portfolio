@@ -25,10 +25,7 @@ const ProjectListClient: React.FC<ProjectListClientProps> = ({ projects }) => {
       </div>
 
       {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
     </>
   );

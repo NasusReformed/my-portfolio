@@ -43,7 +43,9 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
         <div className="w-full h-full flex items-center justify-center rounded-full">
           <div className="text-center">
             <div className="text-3xl mb-1">🎓</div>
-            <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">{institution.charAt(0)}</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+              {institution.charAt(0)}
+            </p>
           </div>
         </div>
       );
@@ -73,19 +75,16 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
 
   const content = (
     <div className="flex flex-col items-center w-full h-full">
-      <div className="w-40 h-40 mb-3 relative flex-shrink-0">
-        {renderCertificate()}
-      </div>
+      <div className="w-40 h-40 mb-3 relative flex-shrink-0">{renderCertificate()}</div>
       <div className="w-full text-center px-2 flex-1 flex flex-col justify-center">
-        <h3 className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 mb-1 leading-tight" title={title}>
+        <h3
+          className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 mb-1 leading-tight"
+          title={title}
+        >
           {title}
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400 leading-tight mb-1">
-          {institution}
-        </p>
-        <p className="text-xs text-gray-500 dark:text-gray-500 font-medium">
-          {period}
-        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 leading-tight mb-1">{institution}</p>
+        <p className="text-xs text-gray-500 dark:text-gray-500 font-medium">{period}</p>
       </div>
     </div>
   );
@@ -112,8 +111,14 @@ const EducationItem: React.FC<EducationItemProps> = ({ education, index = 0 }) =
         {content}
       </div>
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowModal(false)}>
-          <div className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg max-w-xl w-full flex flex-col items-center relative" onClick={e => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg max-w-xl w-full flex flex-col items-center relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl"
               onClick={() => setShowModal(false)}

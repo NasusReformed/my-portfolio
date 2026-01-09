@@ -29,21 +29,9 @@ interface GitHubRepository {
   } | null;
 }
 
-interface GitHubResponse {
-  data: {
-    user: {
-      repositories: {
-        nodes: GitHubRepository[];
-      };
-    };
-  };
-}
-
 // Helper function to format repository names into titles
 function formatTitle(name: string): string {
-  return name
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+  return name.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
 export const getProjects = async (): Promise<Project[]> => {
@@ -85,9 +73,9 @@ export const getProjects = async (): Promise<Project[]> => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'Cache-Control': 'no-cache, no-store, max-age=0',
-        'Pragma': 'no-cache',
+        Pragma: 'no-cache',
       },
       body: JSON.stringify({ query }),
     };
@@ -96,7 +84,6 @@ export const getProjects = async (): Promise<Project[]> => {
     if (process.env.NODE_ENV === 'development') {
       fetchOptions.cache = 'no-store' as RequestCache;
     } else {
-      // @ts-ignore - This is valid for Next.js fetch
       fetchOptions.next = { revalidate: 300 }; // 5 minutes in production
     }
 
@@ -117,15 +104,16 @@ export const getProjects = async (): Promise<Project[]> => {
         if (repo.isFork || !repo.description) {
           return false;
         }
-        
+
         // Check if repository has the 'portfolio' topic
-        const topics = repo.repositoryTopics?.nodes?.map(t => t.topic.name.toLowerCase()) || [];
+        const topics = repo.repositoryTopics?.nodes?.map((t) => t.topic.name.toLowerCase()) || [];
         return topics.includes('portfolio');
       })
       .map((repo) => {
         // Filter out 'portfolio' from the topics
-        const topics = (repo.repositoryTopics?.nodes?.map(t => t.topic.name) || [])
-          .filter(topic => topic.toLowerCase() !== 'portfolio');
+        const topics = (repo.repositoryTopics?.nodes?.map((t) => t.topic.name) || []).filter(
+          (topic) => topic.toLowerCase() !== 'portfolio',
+        );
 
         return {
           id: repo.id,

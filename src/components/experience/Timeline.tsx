@@ -6,9 +6,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ children }) => {
   return (
-    <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4">
-      {children}
-    </div>
+    <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4">{children}</div>
   );
 };
 

@@ -10,7 +10,17 @@ export const experienceData: Experience[] = [
       'Maintained, updated, optimized and implemented new features for the web application',
       'Collaborated with UX/UI designers to implement responsive and user-friendly interfaces.',
     ],
-    technologies: ['React', 'TypeScript', 'Node.js', 'JavaScript', 'SCSS', 'Gemini', 'Postman', 'Jira', 'Bitbucket'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'JavaScript',
+      'SCSS',
+      'Gemini',
+      'Postman',
+      'Jira',
+      'Bitbucket',
+    ],
   },
   {
     role: 'Trainee',
@@ -55,7 +65,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
       </ul>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (
-          <span key={tech} className="px-2 py-1 text-xs font-medium bg-gray-200 text-gray-800 rounded-full dark:bg-gray-700 dark:text-gray-200">
+          <span
+            key={tech}
+            className="px-2 py-1 text-xs font-medium bg-gray-200 text-gray-800 rounded-full dark:bg-gray-700 dark:text-gray-200"
+          >
             {tech}
           </span>
         ))}

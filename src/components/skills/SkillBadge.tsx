@@ -10,7 +10,6 @@ interface SkillBadgeProps {
   className?: string;
   onClick?: () => void;
   interactive?: boolean;
-  iconStyle?: React.CSSProperties;
 }
 
 // Size configurations for different badge sizes
@@ -30,56 +29,56 @@ const getImagePath = (skillName: string): string => {
   // Map skill names to their corresponding image filenames
   const imageMap: Record<string, string> = {
     // Programming Languages
-    'TypeScript': 'typescript.svg',
-    'JavaScript': 'javascript-1.svg',
-    'Python': 'python-5.svg',
-    'Java': 'java.svg',
-    'HTML': 'html-1.svg',
-    'CSS': 'css-3.svg',
-    'Sass': 'sass-1.svg',
-    
+    TypeScript: 'typescript.svg',
+    JavaScript: 'javascript-1.svg',
+    Python: 'python-5.svg',
+    Java: 'java.svg',
+    HTML: 'html-1.svg',
+    CSS: 'css-3.svg',
+    Sass: 'sass-1.svg',
+
     // Frontend
-    'React': 'react-2.svg',
+    React: 'react-2.svg',
     'React Native': 'react-2.svg',
     'Next.js': 'Next.js.svg',
-    'Tailwind': 'tailwind-css-2.svg',
-    
+    Tailwind: 'tailwind-css-2.svg',
+
     // Backend
     'Node.js': 'nodejs-icon.svg',
-    'Django': 'django.svg',
-    'FastAPI': 'fastapi-1.svg',
+    Django: 'django.svg',
+    FastAPI: 'fastapi-1.svg',
 
     // Databases
-    'MongoDB': 'mongodb-icon-1.svg',
-    'MySQL': 'mysql-logo-pure.svg',
-    'PostgreSQL': 'postgresql.svg',
-    'OCI': 'oracle-corporation-logo.svg',
-    
+    MongoDB: 'mongodb-icon-1.svg',
+    MySQL: 'mysql-logo-pure.svg',
+    PostgreSQL: 'postgresql.svg',
+    OCI: 'oracle-corporation-logo.svg',
+
     // DevOps & Cloud
-    'Docker': 'docker-4.svg',
-    'AWS': 'aws-2.svg',
+    Docker: 'docker-4.svg',
+    AWS: 'aws-2.svg',
     'Microsoft Azure': 'azure-2.svg',
-    'Terraform': 'terraform.svg',
-    
+    Terraform: 'terraform.svg',
+
     // Version Control
-    'Git': 'git-icon.svg',
-    'GitHub': 'github-icon-1.svg',
-    'GitLab': 'gitlab.svg',
-    'Bitbucket': 'bitbucket-icon.svg',
-    
+    Git: 'git-icon.svg',
+    GitHub: 'github-icon-1.svg',
+    GitLab: 'gitlab.svg',
+    Bitbucket: 'bitbucket-icon.svg',
+
     // Tools & IDEs
-    'Jira': 'jira-1.svg',
-    'Postman': 'postman.svg',
-    'Jupyter': 'jupyter.svg',
-    'AI': 'AI logo.svg',
-    
+    Jira: 'jira-1.svg',
+    Postman: 'postman.svg',
+    Jupyter: 'jupyter.svg',
+    AI: 'AI logo.svg',
+
     // Data Science
-    'NumPy': 'numpy-1.svg',
-    'Pandas': 'pandas.svg',
-    'Matplotlib': 'matplotlib-1.svg',
-    'Seaborn': 'seaborn-1.svg',
-    'Anaconda': 'Anaconda.svg',
-    
+    NumPy: 'numpy-1.svg',
+    Pandas: 'pandas.svg',
+    Matplotlib: 'matplotlib-1.svg',
+    Seaborn: 'seaborn-1.svg',
+    Anaconda: 'Anaconda.svg',
+
     // Productivity
     'Google Workspace': 'google.svg',
   };
@@ -98,7 +97,6 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
   className = '',
   onClick,
   interactive = true,
-  iconStyle = {},
 }) => {
   const [iconError, setIconError] = React.useState<boolean>(false);
   const [isHovered, setIsHovered] = React.useState<boolean>(false);
@@ -115,7 +113,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
   // Handle click events
   const handleClick = (e: React.MouseEvent) => {
     if (!interactive) return;
-    
+
     e.preventDefault();
     if (onClick) {
       onClick();
@@ -127,7 +125,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
   // Handle keyboard events for accessibility
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!interactive) return;
-    
+
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       if (onClick) {
@@ -148,7 +146,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
     : '';
 
   return (
-    <div 
+    <div
       className="flex flex-col items-center group"
       onMouseEnter={() => interactive && setIsHovered(true)}
       onMouseLeave={() => interactive && setIsHovered(false)}
@@ -183,9 +181,9 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
           )}
         </div>
       </div>
-      
+
       {showLabel && (
-        <span 
+        <span
           className={`text-sm font-medium text-center text-gray-700 dark:text-gray-300 transition-colors duration-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 mt-1`}
           style={{
             maxWidth: '100%',

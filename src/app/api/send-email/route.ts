@@ -44,10 +44,7 @@ export async function POST(request: Request) {
     };
 
     // Send both emails
-    await Promise.all([
-      transporter.sendMail(mailToOwner),
-      transporter.sendMail(mailToVisitor),
-    ]);
+    await Promise.all([transporter.sendMail(mailToOwner), transporter.sendMail(mailToVisitor)]);
 
     return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
   } catch (error) {

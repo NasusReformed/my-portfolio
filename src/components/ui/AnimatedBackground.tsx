@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type Container, type ISourceOptions } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { type Container, type ISourceOptions } from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 const AnimatedBackground = () => {
   const [init, setInit] = useState(false);
@@ -17,14 +17,14 @@ const AnimatedBackground = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log("particles.js loaded", container);
+    console.log('particles.js loaded', container);
   };
 
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
         color: {
-          value: "transparent",
+          value: 'transparent',
         },
       },
       fpsLimit: 60,
@@ -32,7 +32,7 @@ const AnimatedBackground = () => {
         events: {
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: 'repulse',
           },
         },
         modes: {
@@ -44,20 +44,20 @@ const AnimatedBackground = () => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: '#ffffff',
         },
         links: {
-          color: "#ffffff",
+          color: '#ffffff',
           distance: 150,
           enable: false,
           opacity: 0.5,
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: 'none',
           enable: true,
           outModes: {
-            default: "out",
+            default: 'out',
           },
           random: false,
           speed: 0.3,
@@ -73,7 +73,7 @@ const AnimatedBackground = () => {
           value: 0.5,
         },
         shape: {
-          type: "circle",
+          type: 'circle',
         },
         size: {
           value: { min: 1, max: 3 },
@@ -82,9 +82,9 @@ const AnimatedBackground = () => {
           particles: {
             enable: true,
             frequency: 0.05,
-            opacity: 1
-          }
-        }
+            opacity: 1,
+          },
+        },
       },
       detectRetina: true,
     }),

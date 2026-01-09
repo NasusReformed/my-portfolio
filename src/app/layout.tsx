@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-gray-900 text-white`}>
         <AnimatedBackground />
         <NavBar />
-        <main className="relative z-10">{children}</main> 
+        <main className="relative z-10">{children}</main>
         <Footer />
       </body>
     </html>

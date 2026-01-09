@@ -1,13 +1,13 @@
 // Aquí puedes definir tipos globales o interfaces que uses en tu aplicación
 
-interface ProjectData {
+export interface ProjectData {
   id: number;
   title: string;
   description: string;
   slug: string;
 }
 
-interface MyComponentProps {
+export interface MyComponentProps {
   text: string;
   isActive?: boolean;
 }

@@ -11,11 +11,12 @@ const EducationSection: React.FC = () => {
             Education & Training
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
-            My academic background and professional certifications that have shaped my technical expertise.
+            My academic background and professional certifications that have shaped my technical
+            expertise.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {educationData.map((edu: Education, index: number) => (

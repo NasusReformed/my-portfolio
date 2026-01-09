@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Project } from '@/lib/data';
 
 interface ProjectModalProps {
@@ -26,20 +27,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         </button>
 
         {project.imageUrl && (
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="rounded-lg mb-4 w-full h-48 object-cover"
-          />
+          <div className="relative mb-4 w-full h-48">
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 512px"
+              className="rounded-lg object-cover"
+            />
+          </div>
         )}
 
-        <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">
-          {project.title}
-        </h3>
+        <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">{project.title}</h3>
 
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
-          {project.longDescription}
-        </p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">{project.longDescription}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, index) => (

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Project } from '@/lib/data';
 
 interface ProjectCardProps {
@@ -15,11 +16,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       onClick={onClick}
     >
       {project.imageUrl && (
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="rounded-lg mb-4 w-full h-48 object-cover"
-        />
+        <div className="relative mb-4 w-full h-48">
+          <Image
+            src={project.imageUrl}
+            alt={project.title}
+            fill
+            sizes="(max-width: 640px) 100vw, 384px"
+            className="rounded-lg object-cover"
+          />
+        </div>
       )}
 
       <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
