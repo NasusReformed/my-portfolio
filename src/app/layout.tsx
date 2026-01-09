@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import '../styles/custom.css';
-import AnimatedBackground from '@/components/ui/AnimatedBackground';
+import dynamic from 'next/dynamic';
 import { Inter, Geist } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import NavBar from '@/components/common/NavBar';
+
+const AnimatedBackground = dynamic(() => import('@/components/ui/AnimatedBackground'), {
+  loading: () => null,
+});
 
 const inter = Inter({
   subsets: ['latin'],

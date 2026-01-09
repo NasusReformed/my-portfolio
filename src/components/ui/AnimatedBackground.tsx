@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { type Container, type ISourceOptions } from '@tsparticles/engine';
+import { type ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 
 const AnimatedBackground = () => {
@@ -15,10 +15,6 @@ const AnimatedBackground = () => {
       setInit(true);
     });
   }, []);
-
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log('particles.js loaded', container);
-  };
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -95,14 +91,13 @@ const AnimatedBackground = () => {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
         className="fixed top-0 left-0 w-full h-full z-0"
       />
     );
   }
 
-  return <></>;
+  return null;
 };
 
 export default AnimatedBackground;
